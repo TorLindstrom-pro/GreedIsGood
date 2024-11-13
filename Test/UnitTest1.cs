@@ -15,10 +15,13 @@ public class UnitTest1
         Assert.Equal(expectedScore, result);
     }
 
-    [Fact(DisplayName = "Two dice returns correct points")]
-    public void Score_TwoDice_GivesCorrectScore()
+    [Theory(DisplayName = "Two dice returns correct points")]
+    [InlineData(new[] { 1,1 }, 200)]
+    [InlineData(new[] { 1,5 }, 150)]
+    [InlineData(new[] { 1,2,3 }, 100)]
+    public void Score_TwoDice_GivesCorrectScore(int[] dice, int expectedScore)
     {
-        var result = Kata.Score([1,1]);
-        Assert.Equal(200, result);
+        var result = Kata.Score(dice);
+        Assert.Equal(expectedScore, result);
     }
 }
