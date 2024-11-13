@@ -4,10 +4,10 @@ namespace Test;
 
 public class UnitTest1
 {
-    [Fact(DisplayName = "Score returns a number")]
+    [Fact(DisplayName = "A single one returns 100 points")]
     public void Score_ReturnsANumber()
     {
-        var result = Kata.Score([]);
-        Assert.Equal(0, result);
+        var result = Kata.Score([1]);
+        Assert.Equal(100, result);
     }
 }
