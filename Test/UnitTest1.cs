@@ -14,4 +14,11 @@ public class UnitTest1
         var result = Kata.Score([dice]);
         Assert.Equal(expectedScore, result);
     }
+
+    [Fact(DisplayName = "Two dice returns correct points")]
+    public void Score_TwoDice_GivesCorrectScore()
+    {
+        var result = Kata.Score([1,1]);
+        Assert.Equal(200, result);
+    }
 }

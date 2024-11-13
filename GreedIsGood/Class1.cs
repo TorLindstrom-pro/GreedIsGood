@@ -4,7 +4,12 @@ public static class Kata
 {
 	public static int Score(int[] dice)
 	{
-		return dice[0] switch
+		return dice.Select(ScoreOfEachDie).Sum();
+	}
+
+	private static int ScoreOfEachDie(int die)
+	{
+		return die switch
 		{
 			1 => 100,
 			5 => 50,
