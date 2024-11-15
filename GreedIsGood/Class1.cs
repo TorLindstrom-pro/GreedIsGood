@@ -21,7 +21,8 @@ public static class Kata
 	{
 		return die switch
 		{
-			1 => 1000
+			1 => 1000,
+			_ => die * 100
 		};
 	}
 

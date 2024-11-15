@@ -25,10 +25,13 @@ public class UnitTest1
         Assert.Equal(expectedScore, result);
     }
 
-    [Fact(DisplayName = "Triple 1 returns 1000")]
-    public void Score_Triple_ReturnsCorrectScore()
+    [Theory(DisplayName = "Triples returns correct scores")]
+    [InlineData(new[] { 1,1,1 }, 1000)]
+    [InlineData(new[] { 5,5,5 }, 500)]
+    [InlineData(new[] { 2,2,2 }, 200)]
+    public void Score_Triple_ReturnsCorrectScore(int[] dice, int expectedScore)
     {
-        var result = Kata.Score([1, 1, 1]);
-        Assert.Equal(1000, result);
+        var result = Kata.Score(dice);
+        Assert.Equal(expectedScore, result);
     }
 }
