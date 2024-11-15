@@ -7,7 +7,7 @@ public static class Kata
 		var diceGroups = dice.GroupBy(die => die);
 
 		var tripletsScore = diceGroups
-			.Where(group => group.Count() == 3)
+			.Where(group => group.Count() >= 3)
 			.Sum(group => ScoreTriplets(group.Key));
 
 		var singlesScore = diceGroups

@@ -34,4 +34,16 @@ public class UnitTest1
         var result = Kata.Score(dice);
         Assert.Equal(expectedScore, result);
     }
+    
+    [Theory(DisplayName = "Different combinations returns correct score")]
+    [InlineData(new[] { 1,1,1,1 }, 1100)]
+    [InlineData(new[] { 5,5,5,5 }, 550)]
+    [InlineData(new[] { 2,2,2,2 }, 200)]
+    [InlineData(new[] { 1,2,3,4,5 }, 150)]
+    [InlineData(new[] { 1,2,1,1,5 }, 1050)]
+    public void Score_ReturnsCorrectScore(int[] dice, int expectedScore)
+    {
+        var result = Kata.Score(dice);
+        Assert.Equal(expectedScore, result);
+    }
 }
