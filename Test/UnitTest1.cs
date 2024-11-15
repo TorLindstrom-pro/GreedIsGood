@@ -24,4 +24,11 @@ public class UnitTest1
         var result = Kata.Score(dice);
         Assert.Equal(expectedScore, result);
     }
+
+    [Fact(DisplayName = "Triple 1 returns 1000")]
+    public void Score_Triple_ReturnsCorrectScore()
+    {
+        var result = Kata.Score([1, 1, 1]);
+        Assert.Equal(1000, result);
+    }
 }
