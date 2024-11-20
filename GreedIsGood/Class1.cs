@@ -1,4 +1,5 @@
-﻿using static System.Math;
+﻿using System.Linq;
+using static System.Math;
 
 namespace GreedIsGood;
 
